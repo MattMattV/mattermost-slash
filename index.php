@@ -46,7 +46,7 @@ $slim->post('/', function(Request $request, Response $response) use ($slim) {
 
 });
 
-$slim->post('/fuck', function(Request $request, Response $response) use ($slim) {
+$slim->post('/fuck/', function(Request $request, Response $response) use ($slim) {
     $requestParams = $request->getParsedBody();
     error_log($requestParams);
 
