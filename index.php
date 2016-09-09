@@ -20,31 +20,31 @@ $config = [
 ];
 
 $slim = new App($config);
-
-$slim->post('/', function(Request $request, Response $response) use ($slim) {
-    $requestParams = $request->getParsedBody();
-    error_log($requestParams);
-
-    if(is_array($requestParams)) {
-        if(key_exists('user_name', $requestParams))
-            $sender = $requestParams['user_name'];
-
-            $tmp = array(
-                'response_type' => 'in_channel',
-                'text' => "@$sender tried to YOLO"
-            );
-
-            return $response->withJson($tmp, 200);
-    }
-
-    $tmp = array(
-        'response_type' => 'in_channel',
-        'text' => "something went wrong"
-    );
-
-    return $response->withJson($tmp, 200);
-
-});
+//
+//$slim->post('/', function(Request $request, Response $response) use ($slim) {
+//    $requestParams = $request->getParsedBody();
+//    error_log($requestParams);
+//
+//    if(is_array($requestParams)) {
+//        if(key_exists('user_name', $requestParams))
+//            $sender = $requestParams['user_name'];
+//
+//            $tmp = array(
+//                'response_type' => 'in_channel',
+//                'text' => "@$sender tried to YOLO"
+//            );
+//
+//            return $response->withJson($tmp, 200);
+//    }
+//
+//    $tmp = array(
+//        'response_type' => 'in_channel',
+//        'text' => "something went wrong"
+//    );
+//
+//    return $response->withJson($tmp, 200);
+//
+//});
 
 $slim->post('/fuck/someone', function(Request $request, Response $response) use ($slim) {
     $requestParams = $request->getParsedBody();
