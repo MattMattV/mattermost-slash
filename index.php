@@ -33,8 +33,6 @@ $slim->get('/', function(Request $request, Response $response) use ($slim) {
 
             return $response->withJson($tmp, 200);
     }
-
-    print_r($request->getParsedBody());
 });
 
 $slim->run();
