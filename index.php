@@ -21,7 +21,7 @@ $config = [
 
 $slim = new App($config);
 
-$slim->get('/', function(Request $request, Response $response) use ($slim) {
+$slim->post('/', function(Request $request, Response $response) use ($slim) {
     $requestParams = $request->getParsedBody();
     error_log($requestParams);
 
@@ -36,6 +36,14 @@ $slim->get('/', function(Request $request, Response $response) use ($slim) {
 
             return $response->withJson($tmp, 200);
     }
+
+    $tmp = array(
+        'response_type' => 'in_channel',
+        'text' => "something went wrong"
+    );
+
+    return $response->withJson($tmp, 200);
+
 });
 
 $slim->run();
