@@ -23,7 +23,7 @@ $slim = new App($config);
 
 $slim->get('/', function(Request $request, Response $response) use ($slim) {
     $requestParams = $request->getParsedBody();
-    $slim->getContainer()['logger']->warning($requestParams);
+    error_log($requestParams);
 
     if(is_array($requestParams)) {
         if(key_exists('user_name', $requestParams))
