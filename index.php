@@ -9,14 +9,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 $config = [
     'settings' => [
         'displayErrorDetails' => true,
-    ],
-
-    'logger' => function() {
-        $log = new Monolog\Logger('SLASHER');
-        $log->pushHandler(new Monolog\Handler\StreamHandler('php://stderr', Monolog\Logger::WARNING));
-
-        return $log;
-    }
+    ]
 ];
 
 $slim = new App($config);
