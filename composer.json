@@ -1,0 +1,13 @@
+{
+    "name": "mvion/mattermost-slash",
+    "require": {
+        "slim/slim": "^3.5"
+    },
+    "authors": [
+        {
+            "name": "Matthieu Vion",
+            "email": "mvion@trace-software.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
