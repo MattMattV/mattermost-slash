@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 $config = [
     'settings' => [
         'displayErrorDetails' => true,
-    ]
+    ],
 ];
 
 $slim = new App($config);
@@ -25,7 +25,7 @@ $slim->post('/', function(Request $request, Response $response) use ($slim) {
 
         $tmp = array(
             'response_type' => 'in_channel',
-            'text' => "@$sender tried to insult someone by sending $command $msg to me\n"
+            'text' => "@$sender have a message for $msg\n> Go fuck yourself - $sender"
         );
 
         return $response->withJson($tmp, 200);
