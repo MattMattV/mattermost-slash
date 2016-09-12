@@ -20,12 +20,11 @@ $slim->post('/', function(Request $request, Response $response) use ($slim) {
 
     if(is_array($requestParams)) {
             $sender = $requestParams['user_name'];
-            $command = $requestParams['command'];
             $msg = $requestParams['text'];
 
         $tmp = array(
             'response_type' => 'in_channel',
-            'text' => "@$sender have a message for $msg\n> Go fuck yourself - $sender"
+            'text' => "@$sender have a message\n> Go fuck yourself $msg - @$sender"
         );
 
         return $response->withJson($tmp, 200);
