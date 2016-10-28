@@ -20,7 +20,7 @@ $slim->post('/', function(Request $request, Response $response) use ($slim) {
     if(is_array($requestParams)) {
         $response = [
             'response_type' => 'in_channel',
-            'text' => "You should say **Mattermost** not Slack (╯°□°）╯︵ ( . 0 .)"
+            'text' => "You should say **Mattermost** not Slack :rage:"
         ];
 
         return $response->withJson($response, 200);
