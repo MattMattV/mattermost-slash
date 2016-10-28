@@ -18,20 +18,20 @@ $slim->post('/', function(Request $request, Response $response) use ($slim) {
     $requestParams = $request->getParsedBody();
 
     if(is_array($requestParams)) {
-        $response = [
+        $responseArray = [
             'response_type' => 'in_channel',
             'text' => "You should say **Mattermost** not Slack :rage:"
         ];
 
-        return $response->withJson($response, 200);
+        return $response->withJson($responseArray, 200);
     }
 
-    $response = [
+    $responseArray = [
         'response_type' => 'in_channel',
         'text' => "something went wrong"
     ];
 
-    return $response->withJson($response, 200);
+    return $response->withJson($responseArray, 200);
 
 });
 
