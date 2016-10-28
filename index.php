@@ -3,8 +3,8 @@
 require 'vendor/autoload.php';
 
 use Slim\App;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Message\ResponseInterface as Response;
+use Slim\Http\Request as Request;
+use Slim\Http\Response as Response;
 
 $config = [
     'settings' => [
@@ -16,26 +16,22 @@ $slim = new App($config);
 
 $slim->post('/', function(Request $request, Response $response) use ($slim) {
     $requestParams = $request->getParsedBody();
-    error_log($requestParams);
 
     if(is_array($requestParams)) {
-            $sender = $requestParams['user_name'];
-            $msg = $requestParams['text'];
-
-        $tmp = array(
+        $response = [
             'response_type' => 'in_channel',
-            'text' => "@$sender have a message\n> Go fuck yourself $msg - @$sender"
-        );
+            'text' => "You should say **Mattermost** not Slack (╯°□°）╯︵ ( . 0 .)"
+        ];
 
-        return $response->withJson($tmp, 200);
+        return $response->withJson($response, 200);
     }
 
-    $tmp = array(
+    $response = [
         'response_type' => 'in_channel',
         'text' => "something went wrong"
-    );
+    ];
 
-    return $response->withJson($tmp, 200);
+    return $response->withJson($response, 200);
 
 });
 
