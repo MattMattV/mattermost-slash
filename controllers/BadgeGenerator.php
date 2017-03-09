@@ -34,13 +34,14 @@ class BadgeGenerator
 
         $message = [
             'response_type' => 'in_channel',
-            'username' => $requester,
             'text' => 'wrong token'
         ];
 
         if($this->container->get('badgeGeneratorToken') === $requestToken) {
             if (count($parameters) >= 3) {
-                $message['text'] = "![Badge from $requester]($baseUrl";
+                $message['text'] = "From $requester : \n";
+
+                $message['text'] .= "![Badge from $requester]($baseUrl";
 
                 $link = urlencode($parameters[0])
                     ."-"
@@ -53,7 +54,7 @@ class BadgeGenerator
                     $link .= "?style=".urlencode($parameters[3]);
                 }
 
-                $message['text'] .= $link . ') ' . $link;
+                $message['text'] .= $link . ')';
             } else {
                 $message['response_type'] = 'ephemeral';
                 $message['text'] = 'Problem with parameters';
