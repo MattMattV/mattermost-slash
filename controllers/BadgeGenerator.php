@@ -37,29 +37,29 @@ class BadgeGenerator
             'text' => 'wrong token'
         ];
 
-        if($this->container->get('badgeGeneratorToken') === $requestToken) {
-            if (count($parameters) >= 3) {
-                $message['text'] = "From $requester : \n";
+        //if($this->container->get('badgeGeneratorToken') === $requestToken) {
+        if (count($parameters) >= 3) {
+            $message['text'] = "From $requester : \n";
 
-                $message['text'] .= "![Badge from $requester]($baseUrl";
+            $message['text'] .= "![Badge from $requester]($baseUrl";
 
-                $link = urlencode($parameters[0])
-                    ."-"
-                    .urlencode($parameters[1])
-                    ."-"
-                    .urldecode($parameters[2])
-                    .'.svg';
+            $link = urlencode($parameters[0])
+                ."-"
+                .urlencode($parameters[1])
+                ."-"
+                .urldecode($parameters[2])
+                .'.svg';
 
-                if (count($parameters) === 4) {
-                    $link .= "?style=".urlencode($parameters[3]);
-                }
-
-                $message['text'] .= $link . ')';
-            } else {
-                $message['response_type'] = 'ephemeral';
-                $message['text'] = 'Problem with parameters';
+            if (count($parameters) === 4) {
+                $link .= "?style=".urlencode($parameters[3]);
             }
+
+            $message['text'] .= $link . ')';
+        } else {
+            $message['response_type'] = 'ephemeral';
+            $message['text'] = 'Problem with parameters';
         }
+        //}
 
         return $response->withJson($message);
     }
