@@ -53,7 +53,7 @@ class BadgeGenerator
                     $link .= "?style=".urlencode($parameters[3]);
                 }
 
-                $message['text'] = $link . ') ' . $link;
+                $message['text'] .= $link . ') ' . $link;
             } else {
                 $message['response_type'] = 'ephemeral';
                 $message['text'] = 'Problem with parameters';
