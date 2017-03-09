@@ -9,5 +9,10 @@
             "email": "mvion@trace-software.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "MV\\SlashCommands\\Controllers\\": "controllers",
+        }
+    },
     "minimum-stability": "dev"
 }

@@ -13,3 +13,16 @@ Simple PHP app using Slim to answer to Mattermost slash commands !
 - [OPTIONAL] Provide a display name for the bot answers
 - [OPTIONAL] Provide an URL to profile picture of the bot
 - Now you can use your command in Mattermost channels !
+
+
+## BadgeGenerator
+
+Endpoint : `/badgeGenerator`
+
+Method : `POST`
+
+Declare a `BADGE_GENERATOR_TOKEN` environment variable with the token that Mattermost generated for you at the end of the command setup.
+
+That command use https://shields.io/ to provide some custom badge in discussion
+
+Usage : `/<your-trigger> [subject] [status] [color] [style]`
