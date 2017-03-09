@@ -16,8 +16,7 @@ class BadgeGenerator
     {
          $message = [
             'response_type' => 'in_channel',
-            'goto_location' => 'https://github.com/MattMattV/mattermost-slash/tree/master',
-            'text' => '```' . var_export($request->getParsedBody()) . '```'
+            'text' => '```' . (string) $request->getBody() . '```'
         ];
 
         return $response->withJson($message);
