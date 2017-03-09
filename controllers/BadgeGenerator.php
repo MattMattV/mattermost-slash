@@ -40,18 +40,19 @@ class BadgeGenerator
 
         if($this->container->get('badgeGeneratorToken') === $requestToken) {
             if (count($parameters) >= 3) {
-                $message['text'] = "![Badge from $requester]($baseUrl"
-                    .urlencode($parameters[0])
+                $message['text'] = "![Badge from $requester]($baseUrl";
+
+                $link = urlencode($parameters[0])
                     ."-"
                     .urlencode($parameters[1])
                     ."-"
                     .urldecode($parameters[2]);
 
                 if (count($parameters) === 4) {
-                    $message['text'] .= "?style=".urlencode($parameters[3]);
+                    $link .= "?style=".urlencode($parameters[3]);
                 }
 
-                $message['text'] .= ')';
+                $message['text'] = $link . ') ' . $link;
             } else {
                 $message['response_type'] = 'ephemeral';
                 $message['text'] = 'Problem with parameters';
