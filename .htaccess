@@ -1,5 +1,4 @@
 RewriteEngine On
-AllowOverride All
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
