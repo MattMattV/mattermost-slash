@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "MV\\SlashCommands\\Controllers\\": "controllers",
+            "MV\\SlashCommands\\Controllers\\": "controllers"
         }
     },
     "minimum-stability": "dev"
