@@ -46,7 +46,8 @@ class BadgeGenerator
                     ."-"
                     .urlencode($parameters[1])
                     ."-"
-                    .urldecode($parameters[2]);
+                    .urldecode($parameters[2])
+                    .'.svg';
 
                 if (count($parameters) === 4) {
                     $link .= "?style=".urlencode($parameters[3]);
