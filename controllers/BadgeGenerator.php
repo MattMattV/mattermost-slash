@@ -37,7 +37,6 @@ class BadgeGenerator
             'text' => 'wrong token'
         ];
 
-        //if($this->container->get('badgeGeneratorToken') === $requestToken) {
         if (count($parameters) >= 3) {
             $message['text'] = "From $requester : \n";
 
@@ -59,7 +58,6 @@ class BadgeGenerator
             $message['response_type'] = 'ephemeral';
             $message['text'] = 'Problem with parameters';
         }
-        //}
 
         return $response->withJson($message);
     }
