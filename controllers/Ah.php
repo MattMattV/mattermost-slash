@@ -28,7 +28,8 @@ class Ah
 
         $message = [
             'response_type' => 'in_channel',
-            'text' => "![AH]($imageUrl)"
+            'text' => "![AH]($imageUrl)",
+            'user_name' => $request->getParam('user_name')
         ];
 
         return $response->withJson($message);
