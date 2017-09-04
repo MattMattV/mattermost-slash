@@ -36,3 +36,13 @@ Method : `POST`
 Enjoy Denis Brogniart surprise, when he discover that more men would be able to build a better hut.
 
 Usage : `/ah`
+
+# Clap
+
+Endpoint :clap: `/clap`
+
+Method :clap: POST
+
+Everyone :clap: deserve :clap: recognition
+
+Usage :clap: `/clap`
