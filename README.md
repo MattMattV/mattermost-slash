@@ -46,3 +46,18 @@ Method :clap: POST
 Everyone :clap: deserve :clap: recognition
 
 Usage :clap: `/clap`
+
+# Comic
+
+Endpoint : `/comic`
+
+Method : `POST`
+
+Load your favorite comic into your Mattermost.
+
+Usage : `/comic commitstrip|cyanide [fr|en]`
+
+## Details
+
+ - (Commitstrip)[https://www.commitstrip.com] : **commitstrip** : Can be load in fr(ench) or en(glish);
+ - (Cyanide and happiness)[http://explosm.net/] : **cyanide** : Only in english.
