@@ -59,5 +59,5 @@ Usage : `/comic commitstrip|cyanide [fr|en]`
 
 ## Details
 
- - (Commitstrip)[https://www.commitstrip.com] : **commitstrip** : Can be load in fr(ench) or en(glish);
- - (Cyanide and happiness)[http://explosm.net/] : **cyanide** : Only in english.
+ - [Commitstrip](https://www.commitstrip.com) : **commitstrip** : Can be load in fr(ench) or en(glish);
+ - [Cyanide and happiness](http://explosm.net/) : **cyanide** : Only in english.
