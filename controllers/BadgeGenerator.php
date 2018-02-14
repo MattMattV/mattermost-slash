@@ -39,8 +39,6 @@ class BadgeGenerator
         ];
 
         if (count($parameters) >= 3) {
-            $message['text'] = "From $requester : \n";
-
             $message['text'] .= "![Badge from $requester]($baseUrl";
 
             $link = urlencode($parameters[0])
