@@ -34,7 +34,7 @@ class BadgeGenerator
 
         $message = [
             'response_type' => 'in_channel',
-            'user_name' => $request->getParam('user_name')
+            'user_name' => $request->getParam('user_name'),
             'text' => 'wrong token'
         ];
 
