@@ -5,7 +5,7 @@ services:
   - docker
 
 script:
-    - docker build --pull --no-cache -t mistermatt/mattermost-slash:latest
+    - docker build --pull --no-cache -t mistermatt/mattermost-slash:latest .
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
