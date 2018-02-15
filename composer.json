@@ -1,18 +1,26 @@
 {
     "name": "mvion/mattermost-slash",
     "require": {
-        "slim/slim": "^3.5"
+        "slim/slim": "^3.9"
     },
     "authors": [
         {
             "name": "Matthieu Vion",
             "email": "mvion@trace-software.com"
+        },
+        {
+            "name": "Thomas S",
+            "email": "thomas@servuc.fr"
         }
     ],
     "autoload": {
         "psr-4": {
             "MV\\SlashCommands\\Controllers\\": "controllers"
         }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true
     },
     "minimum-stability": "dev"
 }
