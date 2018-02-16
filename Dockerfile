@@ -5,7 +5,7 @@ WORKDIR /home/build
 
 COPY . .
 
-RUN composer install
+RUN composer install --no-dev
 
 # FINAL STAGE
 FROM php:7.2-apache

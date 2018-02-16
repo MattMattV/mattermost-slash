@@ -3,11 +3,8 @@ sudo: required
 
 services:
   - docker
-
 script:
   - docker build --pull --no-cache -t mistermatt/mattermost-slash:latest .
-
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ];
-    then docker login -u "$DOCKER_USER" -p "$DOCKER_PASS";
-    docker push mistermatt/mattermost-slash:latest; fi
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD;
+  docker push mistermatt/mattermost-slash:latest; fi
